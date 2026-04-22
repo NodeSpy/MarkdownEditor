@@ -1,0 +1,145 @@
+{
+  "": {
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/master.swiftdeps"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/App/AppCommands.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppCommands.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppCommands.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppCommands~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppCommands.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppCommands.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/App/MarkdownEditorApp.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownEditorApp.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownEditorApp.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownEditorApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownEditorApp.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownEditorApp.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Models/AppSettings.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppSettings.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppSettings.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppSettings~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppSettings.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/AppSettings.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Models/HeadingItem.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/HeadingItem.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/HeadingItem.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/HeadingItem~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/HeadingItem.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/HeadingItem.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Models/MarkdownDocument.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownDocument.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownDocument.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownDocument~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownDocument.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/MarkdownDocument.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Services/ExportService.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ExportService.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ExportService.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ExportService~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ExportService.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ExportService.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Services/SFTPService.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/SFTPService.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/SFTPService.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/SFTPService~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/SFTPService.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/SFTPService.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Services/ThemeManager.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ThemeManager.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ThemeManager.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ThemeManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ThemeManager.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ThemeManager.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/ViewModels/EditorViewModel.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorViewModel.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorViewModel.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorViewModel~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorViewModel.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorViewModel.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/ViewModels/FileTreeViewModel.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeViewModel.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeViewModel.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeViewModel~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeViewModel.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeViewModel.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/ViewModels/RemoteFileTreeViewModel.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeViewModel.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeViewModel.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeViewModel~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeViewModel.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeViewModel.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Views/ContentView.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ContentView.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ContentView.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ContentView.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/ContentView.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Views/EditorWebView.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorWebView.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorWebView.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorWebView~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorWebView.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/EditorWebView.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Views/FileTreeView.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeView.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeView.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeView~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeView.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/FileTreeView.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Views/OutlineView.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/OutlineView.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/OutlineView.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/OutlineView~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/OutlineView.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/OutlineView.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Views/PreferencesView.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/PreferencesView.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/PreferencesView.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/PreferencesView~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/PreferencesView.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/PreferencesView.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Views/RemoteConnectionView.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteConnectionView.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteConnectionView.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteConnectionView~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteConnectionView.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteConnectionView.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Views/RemoteFileTreeView.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeView.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeView.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeView~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeView.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/RemoteFileTreeView.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/Sources/MarkdownEditor/Views/StatusBarView.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/StatusBarView.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/StatusBarView.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/StatusBarView~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/StatusBarView.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/StatusBarView.dia"
+  },
+  "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/resource_bundle_accessor.d",
+    "object": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/adam/playground/macos_utilities/apps/MarkdownEditor/.build/arm64-apple-macosx/debug/MarkdownEditor.build/resource_bundle_accessor.dia"
+  }
+}
