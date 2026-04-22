@@ -1,0 +1,189 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+permissions:
+  contents: write
+
+env:
+  APP_NAME: MarkdownEditor
+
+jobs:
+  release:
+    name: Build & Release
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── Version ───────────────────────────────────────────────────────────
+      - name: Extract version from tag
+        id: version
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          VERSION="${TAG#v}"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Stamp version into Info.plist
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          /usr/libexec/PlistBuddy \
+            -c "Set :CFBundleShortVersionString ${VERSION}" \
+            -c "Set :CFBundleVersion ${VERSION}" \
+            Sources/${{ env.APP_NAME }}/Resources/Info.plist
+
+      # ── Build ──────────────────────────────────────────────────────────────
+      - name: Build arm64
+        run: swift build -c release --arch arm64
+
+      - name: Build x86_64
+        run: swift build -c release --arch x86_64
+
+      - name: Create universal binary
+        run: |
+          mkdir -p .build/universal
+          lipo -create \
+            .build/arm64-apple-macosx/release/${{ env.APP_NAME }} \
+            .build/x86_64-apple-macosx/release/${{ env.APP_NAME }} \
+            -output .build/universal/${{ env.APP_NAME }}
+
+      # ── Bundle ─────────────────────────────────────────────────────────────
+      - name: Assemble .app bundle
+        run: |
+          APP_DIR="${{ env.APP_NAME }}.app"
+          PRODUCTS_DIR=".build/arm64-apple-macosx/release"
+
+          rm -rf "${APP_DIR}"
+          mkdir -p "${APP_DIR}/Contents/MacOS"
+          mkdir -p "${APP_DIR}/Contents/Resources"
+
+          # Universal binary as the executable
+          cp .build/universal/${{ env.APP_NAME }} "${APP_DIR}/Contents/MacOS/"
+          cp Sources/${{ env.APP_NAME }}/Resources/Info.plist "${APP_DIR}/Contents/Info.plist"
+          printf 'APPL????' > "${APP_DIR}/Contents/PkgInfo"
+
+          # Resource bundle (arch-independent; take from arm64 build)
+          RESOURCE_BUNDLE="${PRODUCTS_DIR}/${{ env.APP_NAME }}_${{ env.APP_NAME }}.bundle"
+          if [ -d "${RESOURCE_BUNDLE}" ]; then
+            cp -R "${RESOURCE_BUNDLE}" "${APP_DIR}/Contents/Resources/"
+          fi
+
+      # ── Code Signing (optional — configure secrets to enable) ──────────────
+      # Required secrets:
+      #   BUILD_CERTIFICATE_BASE64  base64-encoded Developer ID Application .p12
+      #   P12_PASSWORD              password for the .p12 file
+      #   KEYCHAIN_PASSWORD         any strong password for the temp keychain
+      #   DEVELOPER_ID_APPLICATION  signing identity, e.g.
+      #                             "Developer ID Application: Your Name (TEAMID)"
+      - name: Detect signing secrets
+        id: signing
+        run: |
+          if [ -n "$CERT" ] && [ -n "$IDENTITY" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          CERT: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+          IDENTITY: ${{ secrets.DEVELOPER_ID_APPLICATION }}
+
+      - name: Import signing certificate
+        if: steps.signing.outputs.enabled == 'true'
+        env:
+          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+          P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+        run: |
+          CERT_PATH="$RUNNER_TEMP/build_cert.p12"
+          KEYCHAIN_PATH="$RUNNER_TEMP/signing.keychain-db"
+
+          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode -o "$CERT_PATH"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security import "$CERT_PATH" -P "$P12_PASSWORD" \
+            -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+          security set-key-partition-list \
+            -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security list-keychain -d user -s "$KEYCHAIN_PATH"
+
+      - name: Sign app
+        if: steps.signing.outputs.enabled == 'true'
+        env:
+          DEVELOPER_ID_APPLICATION: ${{ secrets.DEVELOPER_ID_APPLICATION }}
+        run: |
+          codesign --force --deep --options runtime \
+            --sign "$DEVELOPER_ID_APPLICATION" \
+            "${{ env.APP_NAME }}.app"
+          codesign --verify --deep --strict "${{ env.APP_NAME }}.app"
+
+      - name: Clean up keychain
+        if: always() && steps.signing.outputs.enabled == 'true'
+        run: |
+          security delete-keychain "$RUNNER_TEMP/signing.keychain-db" 2>/dev/null || true
+
+      # ── Notarization (optional — configure secrets to enable) ──────────────
+      # Required secrets (in addition to signing secrets above):
+      #   NOTARIZATION_APPLE_ID   Apple ID used for notarization
+      #   NOTARIZATION_TEAM_ID    10-character Apple Developer Team ID
+      #   NOTARIZATION_PASSWORD   App-specific password for that Apple ID
+      - name: Detect notarization secrets
+        id: notarization
+        run: |
+          if [ -n "$APPLE_ID" ] && [ -n "$TEAM_ID" ] && [ -n "$PASSWORD" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          APPLE_ID: ${{ secrets.NOTARIZATION_APPLE_ID }}
+          TEAM_ID: ${{ secrets.NOTARIZATION_TEAM_ID }}
+          PASSWORD: ${{ secrets.NOTARIZATION_PASSWORD }}
+
+      - name: Notarize app
+        if: steps.notarization.outputs.enabled == 'true'
+        env:
+          NOTARIZATION_APPLE_ID: ${{ secrets.NOTARIZATION_APPLE_ID }}
+          NOTARIZATION_TEAM_ID: ${{ secrets.NOTARIZATION_TEAM_ID }}
+          NOTARIZATION_PASSWORD: ${{ secrets.NOTARIZATION_PASSWORD }}
+        run: |
+          ditto -c -k --keepParent "${{ env.APP_NAME }}.app" /tmp/notarize.zip
+          xcrun notarytool submit /tmp/notarize.zip \
+            --apple-id "$NOTARIZATION_APPLE_ID" \
+            --team-id "$NOTARIZATION_TEAM_ID" \
+            --password "$NOTARIZATION_PASSWORD" \
+            --wait
+          xcrun stapler staple "${{ env.APP_NAME }}.app"
+
+      # ── Package ────────────────────────────────────────────────────────────
+      - name: Create DMG
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          DMG_NAME="${{ env.APP_NAME }}-${VERSION}.dmg"
+          STAGING="$(mktemp -d)"
+
+          cp -R "${{ env.APP_NAME }}.app" "${STAGING}/"
+          ln -s /Applications "${STAGING}/Applications"
+
+          hdiutil create \
+            -volname "Markdown Editor ${VERSION}" \
+            -srcfolder "${STAGING}" \
+            -ov -format UDZO \
+            "${DMG_NAME}"
+
+          echo "DMG_NAME=${DMG_NAME}" >> "$GITHUB_ENV"
+
+      # ── Release ────────────────────────────────────────────────────────────
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Markdown Editor ${{ steps.version.outputs.tag }}"
+          generate_release_notes: true
+          draft: false
+          prerelease: ${{ contains(steps.version.outputs.tag, '-') }}
+          files: ${{ env.DMG_NAME }}
