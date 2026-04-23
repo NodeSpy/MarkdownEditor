@@ -16,7 +16,7 @@ final class ExportService: NSObject, WKNavigationDelegate {
 
     // MARK: - HTML Export
 
-    static func exportHTML(from viewModel: EditorViewModel) {
+    @MainActor static func exportHTML(from viewModel: EditorViewModel) {
         viewModel.getHTML { result in
             DispatchQueue.main.async {
                 switch result {
@@ -32,7 +32,7 @@ final class ExportService: NSObject, WKNavigationDelegate {
 
     // MARK: - PDF Export (via NSPrintOperation)
 
-    static func exportPDF(from viewModel: EditorViewModel) {
+    @MainActor static func exportPDF(from viewModel: EditorViewModel) {
         viewModel.getHTML { result in
             DispatchQueue.main.async {
                 switch result {
